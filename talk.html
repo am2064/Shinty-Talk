@@ -1,0 +1,27 @@
+<head>
+<title>talk</title>
+</head>
+
+<body>
+<div class="container">
+	{{> chat}}
+</div>
+</body>
+
+<template name="chat">
+<div class="row">
+	<h1><u>Meteor Javascript Chatbox!</u></h1>
+</div>
+<div class="row">
+	<input class="form-control" type="text" id="user" placeholder="Name (Optional)"/>
+	<input class="form-control" type="text" placeholder="Words Go Here!" id="words"/>
+	<button type="submit" class="send form-control btn btn-default">Send</button>
+</div>
+{{#each output}}
+<div class="row">
+	<div class="col-md-12">
+		<span>[{{timestamp}}] &lt;{{name}}&gt; {{words}}</span>
+	</div>
+</div>
+{{/each}}
+</template>
