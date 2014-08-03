@@ -13,9 +13,11 @@
 	<h1><u>Meteor Javascript Chatbox!</u></h1>
 </div>
 <div class="row">
-	<input class="form-control" type="text" id="user" placeholder="Name (Optional)"/>
-	<input class="form-control" type="text" placeholder="Words Go Here!" id="words"/>
-	<button type="submit" class="send form-control btn btn-default">Send</button>
+	<form id="chatbox">
+		<input class="form-control" type="text" id="user" placeholder="Name (Optional)"/>
+		<input class="form-control" type="text" placeholder="Words Go Here!" id="words"/>
+		<button type="submit" class="send form-control btn btn-default">Send</button>
+	</form>
 </div>
 {{#each output}}
 <div class="row">

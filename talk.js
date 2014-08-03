@@ -2,12 +2,14 @@ Chat = new Meteor.Collection('chat');
 
 if (Meteor.isClient) {
 	Template.chat.events({
-		'click .send': function() {
+		'submit #chatbox': function() {
 			var chat_name = document.getElementById("user").value.trim();
 			var chat_text = document.getElementById("words").value.trim();
 			if(chat_name=="") chat_name="Anon";
 			if(chat_text!="") Chat.insert({name: chat_name, words: chat_text, timestamp: new Date().getTime()});
-		}
+			document.getElementById("words").value = "";
+			return false;
+		},
 	});
 
 	Template.chat.output=function(){
