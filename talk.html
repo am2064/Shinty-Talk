@@ -10,20 +10,32 @@
 
 <template name="chat">
 <div class="row">
-	<h1><u>Meteor Javascript Chatbox!</u></h1>
+	<center>
+		<h1><u>Meteor Javascript Chatbox!</u></h1>
+	</center>
 </div>
 <div class="row">
 	<form id="chatbox">
-		<input class="form-control" type="text" id="user" placeholder="Name (Optional)"/>
-		<input class="form-control" type="text" placeholder="Words Go Here!" id="words"/>
-		<button type="submit" class="send form-control btn btn-default">Send</button>
+		<div class="row collapse">
+			<div class="large-2 columns">
+				<input type="text" id="user" placeholder="Name (Optional)"/>
+			</div>
+			<div class="large-9 columns">
+				<input type="text" placeholder="Words Go Here!" id="words"/>
+			</div>
+			<div class="large-1 columns">
+				<button type="submit" class="send postfix">Send</button>
+			</div>
+		</div>
 	</form>
 </div>
-{{#each output}}
-<div class="row">
-	<div class="col-md-12">
-		<span>[{{timestamp}}] &lt;{{name}}&gt; {{words}}</span>
+<div class="row panel">
+	{{#each output}}
+	<div class="row">
+		<div class="small-10 columns small-centered">
+			<span>&lt;{{name}}&gt; {{words}}</span>
+		</div>
 	</div>
+	{{/each}}
 </div>
-{{/each}}
 </template>
